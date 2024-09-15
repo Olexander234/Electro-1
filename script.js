@@ -1,14 +1,38 @@
-let slideIndex = 0;
-showSlides();
+var app = angular.module('login', []);
 
-function showSlides() {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
+
+app.controller('loginCtrl',function($scope,$timeout){
+
+	var user = {
+		'login': 'admin',
+		'pwd': 'admin'
+	};
+	
+	$scope.ui = {
+		'shake' :false
+	};
+	
+	$scope.loginaction = function(){
+		if($scope.login == user.login && $scope.pwd == user.pwd){
+			$scope.alert = {
+				type: 'good',
+				message: 'Welcome ! Your are logged ' + user.login
+			};
+			console.log($scope.alert);
+		}
+		else{
+
+			$scope.ui.shake = true;
+			console.log($scope.alert);
+		}
+	 $scope.$watch( $scope.ui.shake  ,function(newValue, oldValue){
+		  if($scope.ui.shake == true){
+				$timeout(function(){
+					$scope.ui.shake = false;
+				}, 1000);
+			}
+	 	});
+	};
+
+
+});

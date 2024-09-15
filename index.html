@@ -1,140 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"rel="stylesheet"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
     <title>Document</title>
-  </head>
-  <body>
-    <div id="header">
-        <div class="logo">
-          <img src="./Слой 2 (2) 2.png"></img>
-        </div>  
-        <nav>
-          <form class="search" action="search.php"> 
-            <input name="q" placeholder="Search..." type="search">
-          </form>
-          <ul>
-            <li>
-              <a href="">Trade In</a>
-              <ul class="mega-dropdown">
-                <li class="row">
-                  <ul class="mega-col">
-                    <li><a href="#">Горные велосипеды</a></li>
-                    <li><a href="#">Городские велосипеды</a></li>
-                    <li><a href="#">Шоссейные велосипеды</a></li>
-                    <li><a href="#">Гравийные велосипеды</a></li>
-                  </ul>
-                  <ul class="mega-col">
-                    <li><a href="#">Велосипеды для триатлона</a></li>
-                    <li><a href="#">Двухподвесные велосипеды</a></li>
-                    <li><a href="#">Электровелосипеды/a></li>
-                    <li><a href="#">Трековые велосипеды</a></li>
-                  </ul>
-                </li>
-              </ul>        
-            </li>
-            <li class="dropdown">
-              <a href="">Велосипеды</a> 
-            </li>
-            <li>
-              <a href="">Запчасти</a>
-            </li>
-            <li>
-              <a href="">Экипировка</a>
-            </li>
-            <li>
-                <a href="">Аксессуары</a>
-              </li>
-              <li>
-                <a href="">Велостанки</a>
-              </li>
-          </ul>
-          <li><a href=""> <img src="./search.png" alt=""></a></li>
-          <li><a href="./form/index.html"><img src="./user1.png" alt=""></a></li>
-          <li> <a href=""><img src="./Frame 31.png" alt=""> </a></li>
-          <li> <a href=""><img src="./Frame 39.png" alt=""> </a></li>
-
-
-        </nav>
-      </div>
-      <div class="slideshow-container">
-
-        
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="./1.png" style="width: 100%;height: 494px;left: 1920px;gap: 0px;opacity: 0px;angle: -180 deg; background: linear-gradient(270deg, #000000b9 36.18%, rgb(0, 0, 0) 61.98%);">
-          <div class="text">Электро<br>велосипеды</div>
-          <div class="text_1">Cento10 Hybrid — это гоночный велосипед с помогающим педалированию электроприводом, который
-            устанавливает новый, очень высокий стандарт для данной категории
-            <button class="text-button">Подробнее</button>
-          </div>
-        
+</head>
+<body>
+    <body>
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Войти</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Регистрация</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <section ng-app="login" ng-controller="loginCtrl" ng-class="{shake: ui.shake }">
+                            <div ng-if="alert" class="info"
+                                ng-class="{error : alert.type == 'error', good: alert.type == 'good'}">
+                                <p></p>
+                            </div>
+                            <div class="group">
+                                <label for="login" class="label">Username</label>
+                                <input type="text" class="input" ng-model="login">
+                            </div>
+                            <div class="group">
+                                <label for="pwd" class="label">Password</label>
+                                <input type="password" ng-model="pwd" class="input" data-type="password">
+                            </div>
+                            <div class="group">
+                                <input type="submit" class="button" value="Sign In" ng-click="loginaction()">
+                            </div>
+                        </section>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="#forgot">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Repeat Password</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Email Address</label>
+                            <input id="pass" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label for="tab-1">Already Member?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="./Rectangle 168.png" style="width: 100%;height: 494px;left: 1920px;gap: 0px;opacity: 0px; angle: -180 deg; background: linear-gradient(270deg, #000000b9 36.18%, rgb(0, 0, 0) 61.98%);">
-          <div class="text">О нас <br> и нашем деле</div>
-        <div class="text_1">Велосипед — это не просто средство передвижения. Мы, команда World-Bike, уверены в этом. Для нас велосипед — это целая жизнь, полная свободы, драйва, приключений и новых открытий.<br>
-          Мы искренне любим своё дело и стараемся, чтобы и для вас велосипед стал неотъемлемой частью жизни.  </div>
-        </div>
-       
-
-
-        <div class="mySlides fade">
-          <div class="numbertext"></div>
-          <img src="./Rectangle 169.png" style="width: 100%;
-                  height: 494px;
-                  left: 1920px;
-                  gap: 0px;
-                  opacity: 0px;
-                  angle: -180 deg;  background: linear-gradient(270deg, #000000b9 36.18%, rgb(0, 0, 0) 61.98%);">
-          <div class="text">Велосипедный мир</div>
-          <div class="text_1">World-Bike специализируется на продаже и обслуживании велосипедов, запчастей, аксессуаров для них и экипировки
-          </div>
         
-        </div>
-      
-        <div style="text-align:center">
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-          <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
-
         
-      </div>
-   
-      
-      <!-- The dots/circles -->
-    
-    
-      <div class="section_block">
-        <div class="block_1">
-          <div class="text-block_1">Экстремальное вождение на горном велосипеде</div>
-        </div>
-        <div class="block_2">
-          <div class="text-block_2">Велосипеды для профессионалов</div>
-        </div>
-        <div class="block_3">
-          <div class="text-block_3">Долгая поездка на шоссейном велосипеде</div>
-        </div>
-
-      </div>
         
-      
         
-     
         
-
-
-    <script src="./script.js"></script>
-  </body>
-</html>
+        <script src="./style.css"></script>
+        </body>
+        
+        </html>
